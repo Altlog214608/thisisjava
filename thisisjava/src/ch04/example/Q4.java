@@ -1,4 +1,4 @@
-package ch04.example;
+package thisisjava.src.ch04.example;
 
 public class Q4 {
 

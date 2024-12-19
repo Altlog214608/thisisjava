@@ -107,6 +107,18 @@ public class SwitchExapmle {
 		// case B에 {}로 묶은 이유? 여러 실행문이 들어가니까.
 		System.out.println("score2:" + score2);
 		
+		for(int i = 0, j =100; i<=50 && j >=50; i++,j--) {
+			//초기화식 2개 증감식 2개 조건 2개 작성
+			// 내부적으로 i,j 두 값 사용 가능
+		}
+		
+		int aa;
+		//1번 구역
+		for(aa=1;aa<=100;aa++) {
+			//2번구역
+		}
+		//3번구역
+		
 		
 	}
 }

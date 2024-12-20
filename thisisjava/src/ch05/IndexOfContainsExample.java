@@ -65,23 +65,39 @@ public class IndexOfContainsExample {
 
         String word = sc.nextLine()+",";
         String[] wordlist = word.split(",");
-        
-        
-        int max = 0;
-        String maxWord = "";
-
-        for(int i = 0; i < wordlist.length; i++) {
-            count = 0;
-            for (index = Half.indexOf(wordlist[i]); index != -1; index = Half.indexOf(wordlist[i], index + 1)) {
-                count++;
-            }
-            System.out.println(wordlist[i] + " : " + count);
-            if (count > max) {
-                maxWord = wordlist[i];
-                max = count;
+//        word = word.replace(",","\n");
+        System.out.println(word);
+        int a = word.indexOf(",");
+        System.out.println(a);
+        for(int i = 0; i < word.length();) {
+            for(int j= word.indexOf(","); j < word.length(); j++) {
+                String newword = word.substring(i,j-1);
+                index=Half.indexOf(newword);
+                if (index != -1){
+                    count++;
+                }
+                System.out.println(newword);
+                i += j;
             }
         }
-        System.out.println("가장 많이 나온단어: "+ "\""+maxWord +"\""+ "의 개수: " +max);
+
+        System.out.println(count);
+
+//        int max = 0;
+//        String maxWord = "";
+//
+//        for(int i = 0; i < wordlist.length; i++) {
+//            count = 0;
+//            for (index = Half.indexOf(wordlist[i]); index != -1; index = Half.indexOf(wordlist[i], index + 1)) {
+//                count++;
+//            }
+//            System.out.println(wordlist[i] + " : " + count);
+//            if (count > max) {
+//                maxWord = wordlist[i];
+//                max = count;
+//            }
+//        }
+//        System.out.println("가장 많이 나온단어: \""+ maxWord + "\"의 개수: " +max);
 
 //        for (index = Half.indexOf("out"); index != -1; index = Half.indexOf("out", index + 1)) {
 //            count++;

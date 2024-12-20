@@ -20,14 +20,14 @@ public class Q7 {
 			}
 
 			if(choice.equals("1")) {
-				System.out.println("예금액>> ");
+				System.out.print("예금액>> ");
 				int sendmoney = Integer.parseInt(scanner.nextLine());
 				bank += sendmoney;
 
 
 			}
 			else if(choice.equals("2")) {
-				System.out.println("출금액>> ");
+				System.out.print("출금액>> ");
 				int outmoney = Integer.parseInt(scanner.nextLine());
 				if (outmoney > bank){
 					System.out.println("출금액이 잔고보다 많습니다");
@@ -35,8 +35,6 @@ public class Q7 {
 					continue;
 				}
 				bank -= outmoney;
-				scanner.reset();
-
 			}			
 			else if(choice.equals("3")) {
 				System.out.println("잔고>> " + bank);	

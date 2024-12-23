@@ -7,6 +7,7 @@ public class December_23_2 {
         //열거형
         //요일, 계절 외 한정된 값을 갖는 타입
 
+        //--------------------------------------------------------
         Week today =null;
 
         Calendar cal = Calendar.getInstance();
@@ -43,5 +44,8 @@ public class December_23_2 {
         } else {
             System.out.println("열공");
         }
+        //--------------------------------------------------------
+
+
     }
 }

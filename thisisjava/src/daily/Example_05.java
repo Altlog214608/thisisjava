@@ -47,7 +47,7 @@ public class Example_05 {
             if(choice == 1) {
                 System.out.print("학생수 >");
                 int selcet = Integer.parseInt(sc.nextLine());
-                student += selcet ;
+                student = selcet ;
             } else if(choice == 2) {
                 System.out.print("scores[0]>");
                 scorelist[0] = Integer.parseInt(sc.nextLine());

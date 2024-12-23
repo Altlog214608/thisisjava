@@ -1,5 +1,5 @@
 package thisisjava.src.daily;
-
+import java.util.Calendar;
 import java.util.Arrays;
 
 public class December_23 {
@@ -247,6 +247,7 @@ public class December_23 {
 //        double totalEnglishAvg2 = (double) totalEnglishSum2 / englishScores2.length;
 //        System.out.println("전체 학생의 영어 평균 점수"+totalEnglishAvg2);
 
+        //------------------------------------------------------------
         String[] strArray = new String[3];
         strArray[0]="java";
         strArray[1]="java";
@@ -255,6 +256,9 @@ public class December_23 {
         System.out.println(strArray[0] == strArray[1]);
         System.out.println(strArray[0] == strArray[2]);
         System.out.println(strArray[0].equals(strArray[2]));
+
+        //------------------------------------------------------------
+
 
         int[] oldIntArray = {1,2,3};
 
@@ -267,21 +271,64 @@ public class December_23 {
             System.out.println("newIntArray["+i+"]="+newIntArray[i]);
         }
 
+        //-----------------------------------------------------------
+
         String[] oldStrArray = {"java","array","copy"};
 
         String[] newStrArray = new String[5];
 
+        //System.arraycopy(원본,원본시작idx,복사할배열,복사할배열시작idx,항목수)
         System.arraycopy(oldStrArray,0,newStrArray,2,oldStrArray.length);
 
         for (int i=0; i<newStrArray.length; i++) {
             System.out.println("newStrArray["+i+"]="+newStrArray[i]);
         }
-    }
 
+        //------------------------------------------------------------
+
+        int[] scores = {1,2,3,4,5,6,7,8,9,10};
+        for(String i : newStrArray) {
+            System.out.println(i);
+        }
+        //------------------------------------------------------------
+
+        //열거형
+        //요일, 계절 외 한정된 값을 갖는 타입
+
+        Week today =null;
+
+        Calendar cal = Calendar.getInstance();
+
+        int week = cal.get(Calendar.DAY_OF_WEEK);
+
+        switch(week){
+            case 1:
+                today = Week.SUNDAY;
+                break;
+            case 2:
+                today = Week.MONDAY;
+                break;
+            case 3:
+                today = Week.TUESDAY;
+                break;
+            case 4:
+                today = Week.WEDNESDAY;
+                break;
+            case 5:
+                today = Week.THURSDAY;
+                break;
+            case 6:
+                today = Week.FRIDAY;
+                break;
+            case 7:
+                today = Week.SATURDAY;
+                break;
+
+        }
+    }
 //    public static void printItem(int[] scores){
 //        for(int i=0; i<scores.length; i++) {
 //            System.out.println("scores["+i+"]="+scores[i]);
 //        }
 //    }// 사용자 함수 선언 정의 //void는 반환값이 없는 함수라는 의미
-
 }

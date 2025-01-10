@@ -48,7 +48,7 @@ public class SportsCar { //공개 클래스 public
         return result;
     }
 
-    public void main(String[] args) {
+    public static void main(String[] args) {
         SportsCar s1 = new SportsCar("그랜져","검정");
         System.out.println("s1 변수가 SportsCar 객체를 참조합니다");
 
@@ -66,10 +66,10 @@ public class SportsCar { //공개 클래스 public
 
         System.out.println(s3.name);
 
-        System.out.println(this.plus(5,7));
-        System.out.println(this.divide(5,7));
-        this.powerOn();
-        this.powerOff();
+        System.out.println(s1.plus(5,7));
+        System.out.println(s1.divide(5,7));
+        s1.powerOn();
+        s1.powerOff();
     }
 
 }

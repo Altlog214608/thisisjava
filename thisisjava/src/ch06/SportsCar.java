@@ -48,6 +48,15 @@ public class SportsCar { //공개 클래스 public
         return result;
     }
 
+    int sum(int ... values) {
+        int sum = 0;
+
+        for(int i = 0; i < values.length; i++) {
+            sum += values[i];
+        }
+
+        return sum;
+    }
     public static void main(String[] args) {
         SportsCar s1 = new SportsCar("그랜져","검정");
         System.out.println("s1 변수가 SportsCar 객체를 참조합니다");
@@ -70,6 +79,7 @@ public class SportsCar { //공개 클래스 public
         System.out.println(s1.divide(5,7));
         s1.powerOn();
         s1.powerOff();
+        System.out.println(s1.sum(1,2,3,4));
     }
 
 }

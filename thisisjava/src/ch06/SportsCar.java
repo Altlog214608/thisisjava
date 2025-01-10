@@ -51,12 +51,33 @@ public class SportsCar { //공개 클래스 public
     int sum(int ... values) {
         int sum = 0;
 
-        for(int i = 0; i < values.length; i++) {
-            sum += values[i];
+        for (int value : values) {
+            sum += value;
         }
 
         return sum;
     }
+
+    int field1;
+    void method1() {}
+
+    static int field2;
+    static void method2() {}
+
+    static {
+//        field1 = 10;
+//        method1();
+        field2 = 10;
+        method2();
+    }
+
+    static void method3() {
+//        this.field1 = 10;
+//        this.method1();
+        field2 = 10;
+        method2();
+    }
+
     public static void main(String[] args) {
         SportsCar s1 = new SportsCar("그랜져","검정");
         System.out.println("s1 변수가 SportsCar 객체를 참조합니다");
@@ -81,6 +102,7 @@ public class SportsCar { //공개 클래스 public
         s1.powerOff();
         System.out.println(s1.sum(1,2,3,4));
 
+
     }
 
 }
@@ -88,3 +110,12 @@ public class SportsCar { //공개 클래스 public
 class Tire{
 
 }
+
+//class Student{
+//    static String name = "10";
+//    static void xx() {System.out.println("클래스메서드");}
+//    Student(String name) {
+//        Student.name = name;};
+//    void x() {System.out.println("x호출");}
+//}
+

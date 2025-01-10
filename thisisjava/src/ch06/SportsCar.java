@@ -80,6 +80,7 @@ public class SportsCar { //공개 클래스 public
         s1.powerOn();
         s1.powerOff();
         System.out.println(s1.sum(1,2,3,4));
+
     }
 
 }

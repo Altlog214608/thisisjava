@@ -72,10 +72,9 @@ public class SportsCar { //공개 클래스 public
     }
 
     static void method3() {
-//        this.field1 = 10;
-//        this.method1();
-        field2 = 10;
-        method2();
+        SportsCar car4 = new SportsCar("티코");
+        car4.field1 = 10;
+        car4.method1();
     }
 
     public static void main(String[] args) {

@@ -17,12 +17,11 @@ public class SportsCar { //공개 클래스 public
 //
 
     SportsCar(String name) {
-        this.name = name;
+        this(name,"검정",250);
     }
 
     SportsCar(String name,String color) {
-        this.name = name;
-        this.color = color;
+        this(name,color,300);
     }
 
     SportsCar(String name,String color,int max_speed) {
@@ -31,7 +30,25 @@ public class SportsCar { //공개 클래스 public
         this.max_speed = max_speed;
     }
 
-    public static void main(String[] args) {
+    void powerOn() {
+        System.out.println("on");
+    }
+
+    void powerOff() {
+        System.out.println("off");
+    }
+
+    int plus(int x, int y ) {
+        int result = x + y;
+        return result;
+    }
+
+    double divide(int x, int y) {
+        double result = (double) x / (double) y;
+        return result;
+    }
+
+    public void main(String[] args) {
         SportsCar s1 = new SportsCar("그랜져","검정");
         System.out.println("s1 변수가 SportsCar 객체를 참조합니다");
 
@@ -49,7 +66,12 @@ public class SportsCar { //공개 클래스 public
 
         System.out.println(s3.name);
 
+        System.out.println(this.plus(5,7));
+        System.out.println(this.divide(5,7));
+        this.powerOn();
+        this.powerOff();
     }
+
 }
 
 class Tire{

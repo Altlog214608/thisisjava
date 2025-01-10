@@ -15,6 +15,8 @@ public class SportsCar { //공개 클래스 public
     String color;
     int max_speed;
 //
+    SportsCar() {
+    }
 
     SportsCar(String name) {
         this(name,"검정",250);
@@ -77,6 +79,19 @@ public class SportsCar { //공개 클래스 public
         car4.method1();
     }
 
+    int speed;
+    void run() {
+        System.out.println(speed + "으로 달립니다");
+    }
+
+    static void simulate() {
+        SportsCar mycar = new SportsCar();
+
+        mycar.speed = 200;
+        mycar.run();
+    }
+
+
     public static void main(String[] args) {
         SportsCar s1 = new SportsCar("그랜져","검정");
         System.out.println("s1 변수가 SportsCar 객체를 참조합니다");
@@ -100,6 +115,12 @@ public class SportsCar { //공개 클래스 public
         s1.powerOn();
         s1.powerOff();
         System.out.println(s1.sum(1,2,3,4));
+
+        simulate();
+
+        SportsCar myCar = new SportsCar();
+        myCar.speed = 60;
+        myCar.run();
     }
 }
 

@@ -28,7 +28,7 @@ public class Bfactory {
     static int Bfactory_funds = 10000000;
     static int tire_count;
     static int wheel_price = 2000000;
-    static String name;
+    static String name="소나타";
 
     Bfactory() {
 
@@ -66,18 +66,22 @@ public class Bfactory {
         return tire_count;
     }
 
-    static String buy_car() {
-        Scanner scanner = new Scanner();
-        complte_car(buy_wheel(),scanner);
+    static void buy_car() {
+        String car_name = complte_car(buy_wheel(),Bfactory.name);
+        String answer = car_name+ "구매 완료";
+        System.out.println(answer);
+    }
 
-        return complte_car(a, scanner);
+    public static void main(String[] args) {
+        Bfactory.buy_car();
+        System.out.println(Bfactory.Bfactory_funds);
+        System.out.println(Bfactory.wheel_price);
     }
 }
 
 class Afactory {
     static boolean Bfactory_sell = false;
     private static int TIRE_PRICE = 500000;//타이어가격
-
     private static int sellTiers(int quantity) {
         return quantity * TIRE_PRICE; //구매
     }

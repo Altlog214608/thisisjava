@@ -126,24 +126,6 @@ class Account {
         Account.account_num = account_num;
         Account.name=name;
         Account.first_balance = first_balance;
-
-    }
-
-    static void Deposit() {
-        Scanner sc = new Scanner(System.in);
-        int de
-        System.out.println("-------");
-        System.out.println("예금");
-        System.out.println("-------");
-        System.out.print("계좌번호:");
-        String account_num =sc.nextLine();
-        if (account_num == Account.account_num) {
-            System.out.println("출금액:");
-            int deposit = sc.nextInt();
-        }
-        int deposit = sc.nextInt();
-        Account.setBalance(deposit);
-        System.out.println("현재 잔고: " + Account.getBalance());
     }
 
     static void Withdrawal() {
@@ -151,9 +133,36 @@ class Account {
         System.out.println("-------");
         System.out.println("출금");
         System.out.println("-------");
-        Account.setBalance(sc.nextInt());
-
+        System.out.print("계좌번호:");
+        String account_num = sc.nextLine();
+        if (Objects.equals(account_num, Account.account_num)) {
+            System.out.println("출금액:");
+        }
+        int with = sc.nextInt();
+        if (with > Account.getBalance()) {
+            System.out.println("실패");
+        } else {
+            Account.balance -= with;
+            System.out.println("현재 잔고: " + Account.getBalance());
+            System.out.println("출금 성공");
+        }
     }
+
+    static void Deposit() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("-------");
+        System.out.println("예금");
+        System.out.println("-------");
+        System.out.print("계좌번호:");
+        String account_num = sc.nextLine();
+        if (Objects.equals(account_num, Account.account_num)) {
+            System.out.println("예금액:");
+            int deposit = sc.nextInt();
+            Account.balance += deposit;
+            System.out.println("현재 잔고: " + Account.getBalance());
+        }
+    }
+
     static Account getInstance(){
         return account;
     }
@@ -171,6 +180,7 @@ class Account {
         first_balance = sc.nextLine();
         BankApplication.account_list = new Account[]{getInstance()};
         System.out.println("결과: 계좌가 생성되었습니다.");
+        Account.balance = Integer.parseInt(Account.first_balance);
     }
 
 }
@@ -196,10 +206,10 @@ class BankApplication {
         System.out.println("계좌목록");
         System.out.println("-------");
         for (Account account : account_list) {
-            System.out.println(Account.account_num+"\t"+Account.name+"\t"+Account.first_balance);
+            System.out.println(Account.account_num+"\t"+Account.name+"\t"+Account.balance);
         }
-
     }
+
     static void run(){
         while (true) {
             start_str();
@@ -208,16 +218,11 @@ class BankApplication {
             } else if (Objects.equals(select, "2")){
                 getAccountList();
             } else if (Objects.equals(select, "3")){
-                System.out.println("-------");
-                System.out.println("예금");
-                System.out.println("-------");
-                Account.setBalance(sc.nextInt());
-                System.out.println("현재 잔고: " + Account.getBalance());
+                Account.Deposit();
             } else if (Objects.equals(select, "4")){
-                System.out.println("-------");
-                System.out.println("예금");
-                System.out.println("-------");
-
+                Account.Withdrawal();
+            } else if (Objects.equals(select, "5")) {
+                break;
             }
 
         }

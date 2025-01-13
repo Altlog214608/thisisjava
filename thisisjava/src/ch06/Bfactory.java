@@ -21,6 +21,7 @@ public class Bfactory {
         if(check_count()) {
             Bfactory b = new Bfactory(tire_count, name);
             Bfactory.tire_count -= 4;
+            buy_car = true;
         }
         else {
             System.out.println("휠 개수 부족으로 생산 불가");
@@ -66,11 +67,15 @@ public class Bfactory {
 
     }
 
-    public static void main(String[] args) {
+    static String input() {
         Scanner sc = new Scanner(System.in);
         System.out.println("구매하려는 차 모델명을 입력해주세요");
         String car = sc.nextLine();
-        System.out.println(Bfactory.buy_car(car));
+        return car;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(Bfactory.buy_car(input()));
     }
 }
 

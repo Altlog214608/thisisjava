@@ -199,8 +199,6 @@ class BankApplication {
         return select;
     }
 
-    BankApplication bankApplication = new BankApplication();
-
     static void getAccountList() {
         System.out.println("-------");
         System.out.println("계좌목록");

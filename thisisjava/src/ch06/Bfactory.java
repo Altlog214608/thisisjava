@@ -6,6 +6,7 @@ public class Bfactory {
     static int Bfactory_funds = 10000000;
     static int tire_count;
     static String name;
+    static boolean buy_car = true;
 
     Bfactory() {
 
@@ -23,6 +24,7 @@ public class Bfactory {
         }
         else {
             System.out.println("휠 개수 부족으로 생산 불가");
+            buy_car = false;
         }
         return Bfactory.name;
     }
@@ -36,7 +38,7 @@ public class Bfactory {
     }
 
     static boolean check_count() {
-        if (Bfactory.tire_count % 4 ==0) {
+        if (Bfactory.tire_count / 4 >= 1) {
             return true;
         }
         else {
@@ -54,8 +56,14 @@ public class Bfactory {
     static String buy_car(String car) {
         Bfactory.name = car;
         String car_name = complte_car(buy_wheel(),Bfactory.name);
-        String answer = car_name+ "구매 완료";
-        return answer;
+        if (buy_car == true) {
+            String answer = car_name + "구매 완료";
+            return answer;
+        } else {
+            String answer = "구매 실패";
+            return answer;
+        }
+
     }
 
     public static void main(String[] args) {
@@ -92,7 +100,7 @@ class Afactory {
 
     static int sell_wheel() {
         if(Afactory.Bfactory_sell == true) {
-            for(int i = 0 ; i <= 4 ; i++){
+            for(int i = 0 ; i < 6 ; i++){
                 make_wheel();
                 final_price += TIRE_PRICE;
             }

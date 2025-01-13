@@ -78,18 +78,18 @@ public class java_20250113 {
     private void method3(){}
 //
 //    public static void main(String[] args) {
-////        java_20250113 k1 = new java_20250113("123456-1234567", "김동현");
-////
-////        System.out.println(k1.nation);
-////        System.out.println(k1.name);
-////        System.out.println(k1.ssn);
-////
-////        k1.name = "감자칩";
-////        System.out.println(k1.name);
-////
-////        //------------------------------------------------------------------------
-////
-////        System.out.println("지구의 반지름" + java_20250113.EARTH_RADIUS + "km");
-////        System.out.println("지구의 표면적" + java_20250113.EARTH_SURFACE_AREA + "km^2");
+//        java_20250113 k1 = new java_20250113("123456-1234567", "김동현");
+//
+//        System.out.println(k1.nation);
+//        System.out.println(k1.name);
+//        System.out.println(k1.ssn);
+//
+//        k1.name = "감자칩";
+//        System.out.println(k1.name);
+//
+//        //------------------------------------------------------------------------
+//
+//        System.out.println("지구의 반지름" + java_20250113.EARTH_RADIUS + "km");
+//        System.out.println("지구의 표면적" + java_20250113.EARTH_SURFACE_AREA + "km^2");
 //    }
 }

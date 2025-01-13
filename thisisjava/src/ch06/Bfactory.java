@@ -3,7 +3,6 @@ package thisisjava.src.ch06;
 import java.util.Scanner;
 
 public class Bfactory {
-//    static int count;
     static int Bfactory_funds = 10000000;
     static int tire_count;
     static int wheel_price = 2000000;

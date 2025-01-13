@@ -79,4 +79,8 @@ class Afactory {
         Afactory wheel = new Afactory();
         Afactory.count += 1;
     }
+
+    static void sell_wheel() {
+
+    }
 }

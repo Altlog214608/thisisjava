@@ -51,6 +51,7 @@ public class Bfactory {
         String answer = car_name+ "구매 완료";
         return answer;
     }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("구매하려는 차 모델명을 입력해주세요");
@@ -68,6 +69,7 @@ class Afactory {
     private static int sellTiers(int quantity) {
         return quantity * TIRE_PRICE; //구매
     }
+
     Afactory () {}
 
     Afactory (int size, int TIRE_PRICE) {
@@ -81,6 +83,8 @@ class Afactory {
     }
 
     static void sell_wheel() {
-
+        if(Afactory.Bfactory_sell == true) {
+            make_wheel();
+        }
     }
 }

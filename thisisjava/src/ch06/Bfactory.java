@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class Bfactory {
     static int Bfactory_funds = 10000000;
     static int tire_count;
-    static int wheel_price = 2000000;
     static String name;
 
     Bfactory() {

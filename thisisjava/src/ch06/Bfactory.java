@@ -74,8 +74,6 @@ public class Bfactory {
 
     public static void main(String[] args) {
         Bfactory.buy_car();
-        System.out.println(Bfactory.Bfactory_funds);
-        System.out.println(Bfactory.wheel_price);
     }
 }
 

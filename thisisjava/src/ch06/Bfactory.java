@@ -39,8 +39,8 @@ public class Bfactory {
 
     static int buy_wheel(){
         Afactory.Bfactory_sell = true;
-        Bfactory.tire_count = 4;
-        Bfactory_funds -= wheel_price;
+        Bfactory.tire_count = Afactory.sell_wheel();
+        Bfactory_funds -= Afactory.getEnd_price();
 //        Afactory.funds += wheel_price;
         return tire_count;
     }
@@ -64,11 +64,9 @@ class Afactory {
     static int count;
     static int size;
     static boolean Bfactory_sell = false;
-    private static int TIRE_PRICE = 500000;//타이어가격
-
-    private static int sellTiers(int quantity) {
-        return quantity * TIRE_PRICE; //구매
-    }
+    private static int TIRE_PRICE = 500000;//개당 타이어가격
+    static int end_price;
+    static int Afactory_funs = 10000000;
 
     Afactory () {}
 
@@ -82,9 +80,20 @@ class Afactory {
         Afactory.count += 1;
     }
 
-    static void sell_wheel() {
+    static int getEnd_price(){
+        return end_price;
+    }
+
+    static int sell_wheel() {
         if(Afactory.Bfactory_sell == true) {
-            make_wheel();
+            for(int i = 0 ; i <= 4 ; i++){
+                make_wheel();
+                end_price += TIRE_PRICE;
+            }
         }
+        else{
+            System.out.println("구매요청 없음");
+        }
+        return Afactory.count;
     }
 }

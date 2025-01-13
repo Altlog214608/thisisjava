@@ -21,6 +21,7 @@ public class Bfactory {
     static String complte_car(int tire_count, String name) {
         if(check_count()) {
             Bfactory b = new Bfactory(tire_count, name);
+            Bfactory.tire_count -= 4;
         }
         else {
             System.out.println("휠 개수 부족으로 생산 불가");
@@ -45,18 +46,17 @@ public class Bfactory {
         return tire_count;
     }
 
-    static void buy_car(String car) {
+    static String buy_car(String car) {
         Bfactory.name = car;
         String car_name = complte_car(buy_wheel(),Bfactory.name);
         String answer = car_name+ "구매 완료";
-        System.out.println(answer);
+        return answer;
     }
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("구매하려는 차 모델명을 입력해주세요");
         String car = sc.nextLine();
-        Bfactory.buy_car(car);
+        System.out.println(Bfactory.buy_car(car));
     }
 }
 

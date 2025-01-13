@@ -59,22 +59,37 @@ public class java_20250113 {
     java_20250113(int b){}
     private java_20250113(String s){}
 
+    public int field1;
+    int field2;
+    private int field3;
 
+    public java_20250113() {
+        field1 = 1;
+        field2 = 1;
+        field3 = 1;
 
-
-    public static void main(String[] args) {
-//        java_20250113 k1 = new java_20250113("123456-1234567", "김동현");
-//
-//        System.out.println(k1.nation);
-//        System.out.println(k1.name);
-//        System.out.println(k1.ssn);
-//
-//        k1.name = "감자칩";
-//        System.out.println(k1.name);
-//
-//        //------------------------------------------------------------------------
-//
-//        System.out.println("지구의 반지름" + java_20250113.EARTH_RADIUS + "km");
-//        System.out.println("지구의 표면적" + java_20250113.EARTH_SURFACE_AREA + "km^2");
+        method1();
+        method2();
+        method3();
     }
+
+    public void method1(){}
+    void method2(){}
+    private void method3(){}
+//
+//    public static void main(String[] args) {
+////        java_20250113 k1 = new java_20250113("123456-1234567", "김동현");
+////
+////        System.out.println(k1.nation);
+////        System.out.println(k1.name);
+////        System.out.println(k1.ssn);
+////
+////        k1.name = "감자칩";
+////        System.out.println(k1.name);
+////
+////        //------------------------------------------------------------------------
+////
+////        System.out.println("지구의 반지름" + java_20250113.EARTH_RADIUS + "km");
+////        System.out.println("지구의 표면적" + java_20250113.EARTH_SURFACE_AREA + "km^2");
+//    }
 }

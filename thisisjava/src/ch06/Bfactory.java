@@ -76,7 +76,7 @@ class Afactory {
     }
 
     static void make_wheel() {
-        Afactory wheel = new Afactory();
+        Afactory wheel = new Afactory(Afactory.size, Afactory.TIRE_PRICE);
         Afactory.count += 1;
     }
 

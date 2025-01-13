@@ -74,6 +74,7 @@ class Afactory {
         this.size = size;
         this.TIRE_PRICE = TIRE_PRICE;
     }
+
     static void make_wheel() {
         Afactory wheel = new Afactory();
         Afactory.count += 1;

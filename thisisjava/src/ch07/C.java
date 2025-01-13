@@ -1,10 +1,10 @@
-package thisisjava.src.ch06;
+package thisisjava.src.ch07;
 
-public class Example {
+
+import thisisjava.src.ch06.java_20250113;
+
+public class C {
     java_20250113 a1 = new java_20250113(true);
     java_20250113 a2 = new java_20250113(1);
     java_20250113 a3 = new java_20250113("문자열");
-
-    public static void main(String[] args) {
-    }
 }

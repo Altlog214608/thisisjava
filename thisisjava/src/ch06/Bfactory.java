@@ -12,8 +12,8 @@ public class Bfactory {
 
     }
 
-    Bfactory(int a, String name) {
-        this.tire_count = a;
+    Bfactory(int count, String name) {
+        this.tire_count = count;
         this.name = name;
     }
 
@@ -60,12 +60,22 @@ public class Bfactory {
 }
 
 class Afactory {
+    static int count;
+    static int size;
     static boolean Bfactory_sell = false;
     private static int TIRE_PRICE = 500000;//타이어가격
+
     private static int sellTiers(int quantity) {
         return quantity * TIRE_PRICE; //구매
     }
+    Afactory () {}
 
-    String tier;//count
-    String size;
+    Afactory (int size, int TIRE_PRICE) {
+        this.size = size;
+        this.TIRE_PRICE = TIRE_PRICE;
+    }
+    static void make_wheel() {
+        Afactory wheel = new Afactory();
+        Afactory.count += 1;
+    }
 }

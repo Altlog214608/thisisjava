@@ -13,6 +13,17 @@ public class java_0114 {
         child.field2 = "data2";
         child.method3();
 
+        Car mycar = new Car();
+
+        mycar.tire = new Tire();
+        mycar.run();
+
+        mycar.tire = new HankookTire();
+        mycar.run();
+
+        mycar.tire = new KumhoTire();
+        mycar.run();
+
     }
 
     //자식타입 변수 = (자식타입)부모타입인스턴스; //강제 형변환
@@ -37,6 +48,32 @@ public class java_0114 {
         public void method3(){
             System.out.println("Child-method3()");
         }
-
     }
+
+    class Tire {
+        public void roll(){
+            System.out.println("회전");
+        }
+    }
+    class HankookTire extends Tire{
+        @Override
+        public void roll(){
+            System.out.println("한국 회전");
+        }
+    }
+    class KumhoTire extends Tire{
+        @Override
+        public void roll(){
+            System.out.println("금호 회전");
+        }
+    }
+
+    class Car{
+        private Tire tire;
+        public void run(){
+            tire.roll();
+        }
+    }
+
+
 }

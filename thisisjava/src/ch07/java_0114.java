@@ -34,6 +34,16 @@ public class java_0114 {
 
         mygun.bullet = new BlueBullet();
         mygun.shoot();
+
+        Driver driver = new Driver();
+
+        Bus bus = new Bus();
+        driver.drive(bus);
+
+        Taxi taxi = new Taxi();
+        driver.drive(taxi);
+
+
     }
 
     //자식타입 변수 = (자식타입)부모타입인스턴스; //강제 형변환
@@ -118,4 +128,26 @@ public class java_0114 {
         }
     }
 
+    class Vehicle {
+        public void run() {
+            System.out.println("차량이 달립니다");
+        }
+    }
+    class Bus extends Vehicle{
+        @Override
+        public void run() {
+            System.out.println("버스가 달립니다");
+        }
+    }
+    class Taxi extends Vehicle{
+        @Override
+        public void run() {
+            System.out.println("택시가 달립니다");
+        }
+    }
+    class Driver {
+        private void drive(Vehicle vehicle){
+            vehicle.run();
+        }
+    }
 }

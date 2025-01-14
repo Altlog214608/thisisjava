@@ -24,6 +24,16 @@ public class java_0114 {
         mycar.tire = new KumhoTire();
         mycar.run();
 
+        Gun mygun = new Gun();
+
+        mygun.bullet = new Bullet();
+        mygun.shoot();
+
+        mygun.bullet = new RedBullet();
+        mygun.shoot();
+
+        mygun.bullet = new BlueBullet();
+        mygun.shoot();
     }
 
     //자식타입 변수 = (자식타입)부모타입인스턴스; //강제 형변환
@@ -75,5 +85,37 @@ public class java_0114 {
         }
     }
 
+    //클래스의 종류
+    //총기 - Car
+    //격발함수- Car-run()
+    //기본총알(은색) - 은색총알이 날아간다 - Tire
+    //빨간총알 빨간총알이 날아간다 - "" 날아간다 - roll()
+    //파란총알 파란총알이 날아간다 -
+
+    class Gun {
+        private Bullet bullet;
+
+        public void shoot(){
+            bullet.shootBullet();
+        }
+    }
+    class Bullet{
+        public void shootBullet() {
+            System.out.println("총알이 날아간다");
+        }
+    }
+
+    class RedBullet extends Bullet{
+        @Override
+        public void shootBullet(){
+            System.out.println("빨간 총알이 날아간다");
+        }
+    }
+    class BlueBullet extends Bullet{
+        @Override
+        public void shootBullet(){
+            System.out.println("파란 총알이 날아간다");
+        }
+    }
 
 }
